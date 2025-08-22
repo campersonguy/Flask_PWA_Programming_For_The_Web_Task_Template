@@ -1,0 +1,65 @@
+-- database: data_source.db
+
+-- stuff for adding things to the table
+
+
+
+-- userData table
+CREATE TABLE
+    userData (
+        userID INTEGER NOT NULL PRIMARY KEY,
+        username TEXT NOT NULL,
+        email TEXT NOT NULL,
+        password TEXT NOT NULL,
+        logintime CURRENT_TIMESTAMP
+    );
+
+INSERT INTO
+    userData (username, email, password)
+VALUES
+    ('adamcolon', 'adam.colon@gmail.com', 'aoisf83F*hfC'),
+    ('JOHN MANTLE', 'john.mantle@gmail.com', 'cUhuchIhaCLi'),
+    ('brt', 'brt@gmail.com', '(w#fh(hHC931HC'),
+    ('Jilm Wilson', 'jilm.wilson@gmail.com', '1234567890'),
+    ('Gordy', 'gordon.zhao@gmail.com', 'eucaihiceahf38'),
+    ('schlorpwigglermang', 'schlorpwigglermang@gmail.com', 'qwertyuiop'),
+    ('Person who has pneumonoultramicroscopicsilicovolcanoconiosis', 'yes@gmail.com', 'zxcvbnm'),
+    ('asdfghjkl', 'asdfghjkl', 'asdfghjkl'),
+    ('Hugo Newman', 'hugo.newman@gmail.com', 'wonkerbonker'),
+    ('Sans Undertale', 'sans@gmail.com', 'sanstheskeleton'),
+    ('Sans Deltarune', 'snas@gmail.com', 'snastheskeleton');
+
+DELETE FROM userData;
+
+DROP TABLE userData;
+
+
+-- postData table
+CREATE TABLE
+    postData (
+        postID INTEGER NOT NULL PRIMARY KEY,
+        username TEXT NOT NULL,
+        post TEXT NOT NULL,
+        postTime 
+    );
+
+INSERT INTO
+    postData (username, post, postTime)
+VALUES
+    ('adamcolon', 'I killed 37 children', current_timestamp);
+
+DELETE FROM postData;
+
+DROP TABLE postData;
+
+
+-- getting the actual data
+
+
+-- If need a specific user's data
+SELECT * FROM userData
+WHERE username='adamcolon';
+SELECT * FROM postData
+WHERE likes>2000;
+SELECT * FROM postData
+WHERE views>90000;
