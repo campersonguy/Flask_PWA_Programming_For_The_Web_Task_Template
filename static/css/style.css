@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif');
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web');
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 350px;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Titillium Web';
+    color: white;
+    font-weight: bold;
+}
+
+h1.title {
+    font-family: 'Noto Serif';
+    font-size: 55px;
+    padding-left: 70px;
+    padding-right: 70px;
+    text-shadow:
+        -3px -3px 0 black,
+        3px -3px 0 black,
+        -3px 3px 0 black,
+        3px 3px 0 black;
+}
+
+body {
+    background: linear-gradient(to right, rgb(0, 0, 200), rgb(31, 31, 54));
+    text-align: center;
+}
+
+p {
+    text-align: center;
+    font-family: 'Titillium Web';
+    color: white;
+}
+
+p.sg {
+    margin: 0;
+    margin-left: 354px;
+    margin-bottom: 10px;
+    text-align: left;
+    color: white;
+}
+
+p.aside {
+    font-family: 'Titillium Web';
+    margin: 0;
+    text-align: center;
+    color: lime;
+    font-size: 1px;
+}
+
+aside p {
+    font-family: 'Titillium Web';
+}
+
+a {
+    text-align: center;
+    font-family: 'Titillium Web';
+    color: white;
+    text-decoration: none;
+}
+
+.button {
+    border: 4px solid black;
+    border-radius: 15px;
+    background-color: rgb(22, 22, 130);
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    display: inline-block;
+}
+
+.button:hover {
+    background-color: rgb(21, 21, 108);
+}
+
+.login {
+    margin-right: 40px;
+}
+
+.signup {
+    margin-left: 40px;
+}
+
+.copyright {
+    text-align: right;
+    font-size: 10px;
+    margin-top: 70px;
+}
+
+p.lg {
+    margin: 0;
+    margin-left: 379px;
+    text-align: left;
+    color: white;
+}
+
+input.lg {
+    width: 200px;
+    height: 25px;
+    margin-right: 300px;
+    margin-bottom: 20px;
+    font-size: 15px;
+    display: inline-block;
+    font-family: 'Titillium Web';
+}
+
+input.sg {
+    width: 200px;
+    height: 25px;
+    margin-bottom: 20px;
+    margin-right: 350px;
+    font-size: 15px;
+    display: inline-block;
+    font-family: 'Titillium Web';
+}
+
+aside.lg {
+    background-color: rgb(38, 38, 139);
+    border: 2px solid black;
+    border-radius: 15px;
+    position: fixed;
+    bottom: 225px;
+    left: 640px;
+    padding: 0px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+aside.sg {
+    background-color: rgb(38, 38, 139);
+    border: 2px solid black;
+    border-radius: 15px;
+    position: fixed;
+    bottom: 135px;
+    left: 640px;
+    padding: 0px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+p.aside {
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    font-size: 14px;
+}
+
+h1.aside {
+    margin: 0;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+
+button {
+    font-family: 'Titillium Web';
+    background-color: rgb(22, 22, 130);
+    color: white;
+    margin-right: 300px;
+}
+
+button:hover {
+    background-color: rgb(21, 21, 108);
+}
+
+.incorrect {
+    color: red;
+}

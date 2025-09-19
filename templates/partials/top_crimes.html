@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="..\static\css\top_crimes_style.css" />
+    <link rel="icon" type="image/x-icon" href="..\static\images\favicon.png" />
+    <title>confessions.com - Top Crimes</title>
+    <nav>
+        <ul>
+            <li class="selected">Top Crimes</li>
+            <li><a href="search_crimes">Search Crimes</a></li>
+            <li><a href="submit_crimes">Submit Crimes</a></li>
+            <li><a href="leaderboard">Leaderboard</a></li>
+            <li><a><img src="..\static\images\logo.png" alt="logo" width="128" height="60" class="logo"></a></li>
+        </ul>
+    </nav>
+</head>
+
+<body>
+    <h1>Top Crimes</h1><br>
+    <h4>Read up on the 50 most viewed/liked crimes from this week!</h3><br>
+        <label for="sort">Sort by: </label>
+        <select id="sort" name="sort" onchange="handleDropdownChange()">
+            <option value="views">Views</option>
+            <option value="likes">Likes</option>
+        </select>
+        <ul id="crimelist"></ul>
+        <script>
+            const ol = document.getElementById("crimelist");
+            const dropdown = document.getElementById("sort");
+            const sort1 = {{ view1 | tojson | safe }};
+            const sort2 = {{ view2 | tojson | safe }};
+
+            for (let i = 0; i < 50; i++) {
+                const li = document.createElement("li");
+                li.classList.add("crime");
+                li.innerHTML = `<strong>#` + (i + 1) + ` - ${sort1[i][2]} - ${sort1[i][1]}</strong><br>👁&nbsp;${sort1[i][6]}&nbsp;👍&nbsp;${sort1[i][7]}<br><br>${sort1[i][3]}`;
+                ol.appendChild(li);
+                const br = document.createElement("br");
+                const br2 = document.createElement("br");
+                ol.appendChild(br);
+                ol.appendChild(br2);
+            }
+
+            function handleDropdownChange() {
+                for (let i = 0; i < 50; i++) {
+                    const list = document.getElementsByClassName("crime");
+                    if (dropdown.value === "views") {
+                        list[i].innerHTML = `<strong>#` + (i + 1) + ` - ${sort1[i][2]} - ${sort1[i][1]}</strong><br>👁&nbsp;${sort1[i][6]}&nbsp;👍&nbsp;${sort1[i][7]}<br><br>${sort1[i][3]}`;
+                    } else if (dropdown.value === "likes") {
+                        list[i].innerHTML = `<strong>#` + (i + 1) + ` - ${sort2[i][2]} - ${sort2[i][1]}</strong><br>👁&nbsp;${sort2[i][6]}&nbsp;👍&nbsp;${sort2[i][7]}<br><br>${sort2[i][3]}`;
+                    }
+                }
+            }
+        </script>
+</body>
+
+</html>

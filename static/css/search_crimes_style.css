@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web');
+
+
+html {
+    background: linear-gradient(to right, rgb(0, 0, 200), rgb(31, 31, 84));
+}
+
+body {
+    text-align: center;
+}
+
+p {
+    text-align: left;
+    font-family: "Titillium Web";
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Titillium Web";
+    color: white;
+    margin-left: 140px;
+    display: inline;
+}
+
+input {
+    font-family: 'Titillium Web';
+    text-align: center;
+    width: 200px;
+    height: 20px;
+    margin-top: 40px;
+    margin-left: 140px;
+}
+
+.pfp {
+    margin-bottom: 100px;
+    margin-left: 1190px;
+    display: inline-block;
+}
+
+span {
+    border: 2px solid black;
+}
+
+/* funny silly little nav elements */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-right: 2px solid black;
+}
+
+nav ul {
+    text-align: center;
+    list-style-type: none;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    background-color: rgb(47, 47, 134);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: 'Titillium Web';
+    border-bottom: 2px solid black;
+}
+
+nav ul li:last-child {
+    padding-bottom: 450px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Titillium Web';
+    padding: 30px;
+}
+
+nav ul li a:hover {
+    font-weight: bold;
+}
+
+nav ul li:hover {
+    background-color: rgb(31, 31, 130);
+}
+
+nav ul li.selected {
+    color: gray;
+    background-color: rgb(20, 20, 104);
+}
+
+nav ul li:last-child {
+    background-color: rgb(47, 47, 134);
+}
+
+.logo {
+    margin-top: 260px;
+    padding: 0px;
+}

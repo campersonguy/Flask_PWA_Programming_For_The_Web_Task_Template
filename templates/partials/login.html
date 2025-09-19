@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="..\..\static\css\login_style.css" />
+    <link rel="icon" type="image/x-icon" href="..\..\static\images\favicon.png" />
+    <title>confessions.com - Log In</title>
+</head>
+
+<body>
+    <img src="..\..\static\images\logo.png" alt="logo">
+    <p class="lg">Username or Email</p> <br>
+    <input id="username" placeholder="Enter username..." class="lg"><br>
+    <p class="lg">Password</p><br>
+    <input id="password" placeholder="Enter password..." class="lg"><br>
+    <p class="lg">Don't have an account? <a href="signup"><u>Sign Up</u></a></p><br>
+    <p class="incorrect" id="inc"></p><br>
+    <button id="enter">Enter</button>
+    <script>
+        const data = {{ content | tojson | safe }};
+        function Enter() {
+            if (username.value == "" || password.value == "") {
+                inc.textContent = "Missing username or password";
+            } else {
+                for (let i = 0; i <= data.length - 1; i++) {
+                    if (username.value.trim() != data[i][0] && username.value.trim() != data[i][2]) {
+                        inc.textContent = "Incorrect username or password";
+                    } else {
+                        const outerIndex = data.findIndex(inner => inner.includes(username.value));
+                        if (password.value != data[outerIndex][1]) {
+                            inc.textContent = "Incorrect username or password";
+                        } else {
+                            inc.textContent = "";
+                            window.location.href = "top_crimes";
+                        }
+                    }
+                }
+            }
+        }
+        enter.onclick = Enter;
+    </script>
+    <aside class="lg">
+        <h1 class="aside">Sign Up Now!</h1>
+        <p class="aside">Sign Up to confessions.com today to view the<br>latest and greatest crimes! Even submit your
+            own<br>crimes! See yourself on the official leaderboard!<br>Follow other criminals! Sign Up
+            today!<br><br>Disclaimer: We do not endorse committing crimes</p>
+    </aside>
+</body>
+
+</html>

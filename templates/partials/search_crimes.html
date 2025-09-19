@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="..\static\css\search_crimes_style.css" />
+    <link rel="icon" type="image/x-icon" href="..\static\images\favicon.png" />
+    <title>confessions.com - Search Crimes</title>
+    <nav>
+        <ul>
+            <li><a href="top_crimes">Top Crimes</a></li>
+            <li class="selected">Search Crimes</li>
+            <li><a href="submit_crimes">Submit Crimes</a></li>
+            <li><a href="leaderboard">Leaderboard</a></li>
+            <li><a><img src="..\static\images\logo.png" alt="logo" width="128" height="60" class="logo"></a></li>
+        </ul>
+    </nav>
+</head>
+
+<body>
+    <h1>Search Crimes</h1><br>
+    <h4>Search for a crime by title, username or type!</h4><br>
+    <input id="search" placeholder="Search here..." oninput="generateData()">
+    <ul id="crimelist"></ul>
+    <script>
+        const ol = document.getElementById("crimelist");
+        const dropdown = document.getElementById("sort");
+        const view1 = {{ view | tojson | safe }};
+
+        for (let i = 0; i < 1000; i++) {
+            const li = document.createElement("li");
+            li.classList.add("crime");
+            ol.appendChild(li);
+            const br = document.createElement("br");
+            const br2 = document.createElement("br");
+            ol.appendChild(br);
+            ol.appendChild(br2);
+        }
+
+        function generateData() {
+            let i1 = 0;
+            for (let i = 0; i < 1000; i++) {
+                if (view1[i][2].includes(search.value)) {
+                    console.log(view1[i][2]);
+                    ol.children[i1].innerHTML = `<strong>#` + (i1 + 1) + ` - ${view1[i][2]} - ${view1[i][1]}</strong><br>👁&nbsp;${view1[i][6]}&nbsp;👍&nbsp;${view1[i][7]}<br><br>${view1[i][3]}`;
+                    i1 += 1;
+                }
+            }
+        }
+
+
+
+
+        // for (let i = 0; i < 50; i++) {
+        // const list = document.getElementsByClassName("crime");
+        // if (1 === 1) {
+        //list[i].innerHTML = `<strong>#` + (i + 1) + ` - ${view1[i][2]} - ${view1[i][1]}</strong><br>👁&nbsp;${view1[i][6]}&nbsp;👍&nbsp;${view1[i][7]}<br><br>${view1[i][3]}`;
+        // }
+        // }
+
+    </script>
+</body>
+
+</html>

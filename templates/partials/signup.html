@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="..\..\static\css\signup_style.css" />
+    <link rel="icon" type="image/x-icon" href="..\..\static\images\favicon.png" />
+    <title>confessions.com - Sign Up</title>
+</head>
+
+<body>
+    <img src="..\..\static\images\logo.png" alt="logo">
+    <form id="signup" action="/signup" method="POST">
+        <p class="sg">Username</p>
+        <input id="username" placeholder="Enter username..." class="sg" name="user">
+        <p class="sg">Email</p>
+        <input id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$" placeholder="Enter email..." class="sg"
+            name="email">
+        <p class="sg">Password</p>
+        <input id="password" type="password" placeholder="Enter password..." class="sg" name="pw">
+        <p class="sg">Confirm Password</p>
+        <input id="cpassword" type="password" placeholder="Enter password..." class="sg">
+        <p class="sg">Already have an account? <a href="login"><u>Log In</u></a></p>
+        <p class="incorrect" id="inc"></p><br>
+        <button id="enter">Enter</button>
+    </form>
+    <aside class="sg">
+        <p id="check"><strong>
+                <div id="uchar">Username must have 3 - 16 characters<span id="uchar1"></span></div><br>
+                <div id="uspa">Username must not have spaces</div><br>
+                <div id="pchar">Password must have at least 8 characters<span id="pchar1"></span></div><br>
+                <div id="num">Password must have a number</div><br>
+                <div id="cap">Password must have a capital letter</div><br>
+                <div id="match">Passwords must match</div>
+            </strong></p>
+    </aside>
+    <script>
+        const uchar = document.getElementById("uchar");
+        const uspa = document.getElementById("uspa");
+        const pchar = document.getElementById("pchar");
+        const num = document.getElementById("num");
+        const cap = document.getElementById("cap");
+        const match = document.getElementById("match");
+        const myForm = document.getElementById('signup');
+        let numtest = /\d/;
+        let captest = /[A-Z]/;
+        let spatest = / /;
+        let atest = /@/;
+
+        function updateData() {
+            if (username.value.length <= 16 && username.value.length >= 3) {
+                uchar.style.color = "lime";
+            } else {
+                uchar.style.color = "red";
+            }
+            uchar1.textContent = " (" + username.value.length + ")";
+
+            if (!spatest.test(username.value) && username.value.length >= 1) {
+                uspa.style.color = "lime";
+            } else {
+                uspa.style.color = "red";
+            }
+
+            if (password.value.length >= 8) {
+                pchar.style.color = "lime";
+            } else {
+                pchar.style.color = "red";
+            }
+            pchar1.textContent = " (" + password.value.length + ")";
+
+            if (numtest.test(password.value)) {
+                num.style.color = "lime";
+            } else {
+                num.style.color = "red";
+            }
+
+            if (captest.test(password.value)) {
+                cap.style.color = "lime";
+            } else {
+                cap.style.color = "red";
+            }
+
+            if (password.value === cpassword.value && password.value !== "") {
+                match.style.color = "lime";
+            } else {
+                match.style.color = "red";
+            }
+        }
+        function Enter() {
+            myForm.addEventListener('submit', function (event) {
+                if (username.value.length <= 16 && username.value.length >= 3 && atest.test(email.value) && !spatest.test(username.value) && password.value.length >= 8 && numtest.test(password.value) && captest.test(password.value) && password.value === cpassword.value && password.value !== "") {
+                    window.location.href = "top_crimes";
+                } else {
+                    event.preventDefault();
+                }
+            });
+        }
+        const intervalId = setInterval(updateData, 1);
+        enter.onclick = Enter;
+    </script>
+</body>
+
+</html>

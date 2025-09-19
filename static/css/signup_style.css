@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web');
+
+p {
+    margin: 0;
+    margin-left: 354px;
+    margin-bottom: 10px;
+    text-align: left;
+    color: white;
+}
+
+p.aside {
+    margin: 0;
+    text-align: center;
+    color: lime;
+    font-size: 1px;
+}
+
+a {
+    text-align: left;
+    color: white;
+    margin-right: 250px;
+}
+
+input {
+    margin: 0;
+    margin-right: 350px;
+}
+
+aside {
+    background-color: rgb(38, 38, 139);
+    border: 2px solid black;
+    border-radius: 15px;
+    position: fixed;
+    bottom: 125px;
+    left: 640px;
+    padding: 0px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+body {
+    background: linear-gradient(to right, rgb(0, 0, 200), rgb(31, 31, 54));
+    text-align: center;
+    font-family: 'Titillium Web';
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 350px;
+}
+
+input {
+    width: 200px;
+    height: 25px;
+    margin-bottom: 20px;
+    font-size: 15px;
+    display: inline-block;
+    font-family: 'Titillium Web';
+}
+
+button {
+    font-family: 'Titillium Web';
+    background-color: rgb(22, 22, 130);
+    color: white;
+}
+
+button:hover {
+    background-color: rgb(21, 21, 108);
+}
+
+.incorrect {
+    color: red;
+}

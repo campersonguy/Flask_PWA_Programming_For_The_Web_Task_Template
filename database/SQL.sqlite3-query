@@ -4,7 +4,7 @@
 
 
 
--- userData table
+-- test values (old)
 CREATE TABLE
     userData (
         userID INTEGER NOT NULL PRIMARY KEY,
@@ -53,13 +53,28 @@ DELETE FROM postData;
 DROP TABLE postData;
 
 
--- getting the actual data
+-- SQL Queries
 
 
--- If need a specific user's data
+-- Select the data from a specific user
 SELECT * FROM userData
-WHERE username='adamcolon';
+WHERE username='iroebyp';
+
+-- Sort by the 100 most recently created users (doesn't work as date data is formatted DD/MM/YY instead of YY/MM/DD)
+SELECT * FROM userData
+ORDER BY creationdate DESC
+LIMIT 100;
+
+-- Sort the top 50 most liked or viewed posts
 SELECT * FROM postData
-WHERE likes>2000;
+ORDER BY likes DESC
+LIMIT 50;
 SELECT * FROM postData
-WHERE views>90000;
+ORDER BY views DESC
+LIMIT 50;
+
+-- Sort by posts in the last week
+SELECT * FROM postData
+WHERE DATE(postTime)>'2025-08-14'
+ORDER BY postTime DESC;
+
