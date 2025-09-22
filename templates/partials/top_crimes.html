@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="..\static\css\top_crimes_style.css" />
+    <link rel="stylesheet" href="..\..\static\css\style.css" />
     <link rel="icon" type="image/x-icon" href="..\static\images\favicon.png" />
     <title>confessions.com - Top Crimes</title>
     <nav>
@@ -11,25 +11,31 @@
             <li><a href="search_crimes">Search Crimes</a></li>
             <li><a href="submit_crimes">Submit Crimes</a></li>
             <li><a href="leaderboard">Leaderboard</a></li>
-            <li><a><img src="..\static\images\logo.png" alt="logo" width="128" height="60" class="logo"></a></li>
+            <li><a><img src="..\static\images\logo.png" alt="logo" class="logo"></a></li>
         </ul>
     </nav>
 </head>
 
 <body>
-    <h1>Top Crimes</h1><br>
-    <h4>Read up on the 50 most viewed/liked crimes from this week!</h3><br>
+    <h1 class="tc">Top Crimes</h1><br>
+    <h4 class="tc">Read up on the 50 most viewed/liked crimes from this week!</h3><br>
         <label for="sort">Sort by: </label>
-        <select id="sort" name="sort" onchange="handleDropdownChange()">
+        <select class="sort" id="sort" name="sort" onchange="handleDropdownChange()">
             <option value="views">Views</option>
             <option value="likes">Likes</option>
         </select>
         <ul id="crimelist"></ul>
+        <script id="data-view1" type="application/json">
+            {{ view1 | tojson | safe }}
+        </script>
+        <script id="data-view2" type="application/json">
+            {{ view2 | tojson | safe }}
+        </script>
         <script>
             const ol = document.getElementById("crimelist");
             const dropdown = document.getElementById("sort");
-            const sort1 = {{ view1 | tojson | safe }};
-            const sort2 = {{ view2 | tojson | safe }};
+            const sort1 = JSON.parse(document.getElementById("data-view1").textContent);
+            const sort2 = JSON.parse(document.getElementById("data-view2").textContent);
 
             for (let i = 0; i < 50; i++) {
                 const li = document.createElement("li");

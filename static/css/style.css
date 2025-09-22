@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Serif');
 @import url('https://fonts.googleapis.com/css?family=Titillium+Web');
 
+
+/* general */
+
 img {
     display: block;
     margin-left: auto;
@@ -8,23 +11,16 @@ img {
     width: 350px;
 }
 
-h1 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     text-align: center;
     font-family: 'Titillium Web';
     color: white;
     font-weight: bold;
-}
-
-h1.title {
-    font-family: 'Noto Serif';
-    font-size: 55px;
-    padding-left: 70px;
-    padding-right: 70px;
-    text-shadow:
-        -3px -3px 0 black,
-        3px -3px 0 black,
-        -3px 3px 0 black,
-        3px 3px 0 black;
 }
 
 body {
@@ -32,29 +28,21 @@ body {
     text-align: center;
 }
 
-p {
-    text-align: center;
-    font-family: 'Titillium Web';
+p,
+label,
+select {
+    font-family: "Titillium Web";
     color: white;
-}
-
-p.sg {
     margin: 0;
-    margin-left: 354px;
-    margin-bottom: 10px;
-    text-align: left;
-    color: white;
+    padding: 0;
 }
 
-p.aside {
+input {
     font-family: 'Titillium Web';
-    margin: 0;
-    text-align: center;
-    color: lime;
-    font-size: 1px;
+    margin-left: 135px;
 }
 
-aside p {
+aside {
     font-family: 'Titillium Web';
 }
 
@@ -63,6 +51,13 @@ a {
     font-family: 'Titillium Web';
     color: white;
     text-decoration: none;
+}
+
+button {
+    font-family: 'Titillium Web';
+    background-color: rgb(22, 22, 130);
+    color: white;
+    margin-right: 300px;
 }
 
 .button {
@@ -80,19 +75,22 @@ a {
     background-color: rgb(21, 21, 108);
 }
 
-.login {
-    margin-right: 40px;
+
+/* HOMEPAGE */
+
+h1.title {
+    font-family: 'Noto Serif';
+    font-size: 55px;
+    padding-left: 70px;
+    padding-right: 70px;
+    text-shadow:
+        -3px -3px 0 black,
+        3px -3px 0 black,
+        -3px 3px 0 black,
+        3px 3px 0 black;
 }
 
-.signup {
-    margin-left: 40px;
-}
-
-.copyright {
-    text-align: right;
-    font-size: 10px;
-    margin-top: 70px;
-}
+/* LOGIN */
 
 p.lg {
     margin: 0;
@@ -111,14 +109,8 @@ input.lg {
     font-family: 'Titillium Web';
 }
 
-input.sg {
-    width: 200px;
-    height: 25px;
-    margin-bottom: 20px;
-    margin-right: 350px;
-    font-size: 15px;
-    display: inline-block;
-    font-family: 'Titillium Web';
+.incorrect {
+    color: red;
 }
 
 aside.lg {
@@ -131,6 +123,38 @@ aside.lg {
     padding: 0px;
     padding-top: 20px;
     padding-bottom: 20px;
+}
+
+.login {
+    margin-right: 40px;
+}
+
+.signup {
+    margin-left: 40px;
+}
+
+.copyright {
+    text-align: right;
+    font-size: 10px;
+    margin-top: 70px;
+}
+
+/* SIGNUP */
+
+p.sg {
+    margin-left: 354px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+input.sg {
+    width: 200px;
+    height: 25px;
+    margin-bottom: 20px;
+    margin-right: 350px;
+    font-size: 15px;
+    display: inline-block;
+    font-family: 'Titillium Web';
 }
 
 aside.sg {
@@ -160,17 +184,112 @@ h1.aside {
     font-size: 20px;
 }
 
-button {
-    font-family: 'Titillium Web';
-    background-color: rgb(22, 22, 130);
+/* TOP CRIMES */
+
+ul.crimelist {
+    margin-top: 50px;
+}
+
+li.crime {
+    text-align: left;
+    font-family: "Titillium Web";
     color: white;
-    margin-right: 300px;
+    margin-left: 200px;
+    margin-right: 70px;
+    border: 2px solid black;
+    border-radius: 15px;
+    list-style-type: none;
+    padding: 10px;
+    background-color: rgb(20, 20, 120)
 }
 
-button:hover {
-    background-color: rgb(21, 21, 108);
+.pfp {
+    margin-bottom: 100px;
+    margin-left: 1190px;
+    display: inline-block;
 }
 
-.incorrect {
-    color: red;
+span {
+    border: 2px solid black;
+}
+
+.tc {
+    margin: 0;
+    margin-left: 140px;
+}
+
+.sort {
+    color: black;
+}
+
+label {
+    margin-left: 140px;
+}
+
+/* submit crimes */
+
+label input {
+    margin: 0;
+}
+
+/* NAV ELEMENTS */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-right: 2px solid black;
+}
+
+nav ul {
+    text-align: center;
+    list-style-type: none;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    background-color: rgb(47, 47, 134);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: 'Titillium Web';
+    border-bottom: 2px solid black;
+}
+
+nav ul li:last-child {
+    padding-bottom: 450px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Titillium Web';
+    padding: 30px;
+}
+
+nav ul li a:hover {
+    font-weight: bold;
+}
+
+nav ul li:hover {
+    background-color: rgb(31, 31, 130);
+}
+
+nav ul li.selected {
+    color: gray;
+    background-color: rgb(20, 20, 104);
+}
+
+nav ul li:last-child {
+    background-color: rgb(47, 47, 134);
+}
+
+.logo {
+    margin-top: 260px;
+    padding: 0;
+    width: 128px;
+    height: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
 }

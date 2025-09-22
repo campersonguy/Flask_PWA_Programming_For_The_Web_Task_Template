@@ -1,9 +1,17 @@
 from flask import Flask, redirect, url_for
 from flask import render_template
 from flask import request
+from datetime import date
 import database_manager as dbHandler
 
 app = Flask(__name__)
+
+
+@app.route("/vsc", methods=["GET"])
+@app.route("/vsc", methods=["POST", "GET"])
+def index():
+    data = dbHandler.listExtension()
+    return render_template("templatepgs/index.html", content=data)
 
 
 @app.route("/", methods=["GET"])
@@ -26,8 +34,9 @@ def signup():
         user = request.form["user"]
         pw = request.form["pw"]
         email = request.form["email"]
-        dbHandler.insertContact(user, pw, email)
-        return redirect(url_for("top_crimes"))
+        creationdate = date.today()
+        dbHandler.insertContact(user, pw, email, creationdate)
+        return redirect(url_for("topcrimes"))
     else:
         return render_template("partials/signup.html", content=data)
 

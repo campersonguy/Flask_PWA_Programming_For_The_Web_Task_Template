@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="..\..\static\css\login_style.css" />
+    <link rel="stylesheet" href="..\..\static\css\style.css" />
     <link rel="icon" type="image/x-icon" href="..\..\static\images\favicon.png" />
     <title>confessions.com - Log In</title>
 </head>
@@ -12,12 +12,15 @@
     <p class="lg">Username or Email</p> <br>
     <input id="username" placeholder="Enter username..." class="lg"><br>
     <p class="lg">Password</p><br>
-    <input id="password" placeholder="Enter password..." class="lg"><br>
+    <input id="password" type="password" placeholder="Enter password..." class="lg"><br>
     <p class="lg">Don't have an account? <a href="signup"><u>Sign Up</u></a></p><br>
     <p class="incorrect" id="inc"></p><br>
     <button id="enter">Enter</button>
+    <script id="data-view1" type="application/json">
+        {{ content | tojson | safe }}
+    </script>
     <script>
-        const data = {{ content | tojson | safe }};
+        const data = JSON.parse(document.getElementById("data-view1").textContent);
         function Enter() {
             if (username.value == "" || password.value == "") {
                 inc.textContent = "Missing username or password";

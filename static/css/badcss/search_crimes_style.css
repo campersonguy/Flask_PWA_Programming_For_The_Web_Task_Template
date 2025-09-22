@@ -9,12 +9,36 @@ body {
     text-align: center;
 }
 
-p {
+p,
+label,
+select {
     text-align: left;
     font-family: "Titillium Web";
     color: white;
     margin: 0;
     padding: 0;
+}
+
+select {
+    color: black;
+    margin-bottom: 20px;
+}
+
+ul.crimelist {
+    margin-top: 50px;
+}
+
+li.crime {
+    text-align: left;
+    font-family: "Titillium Web";
+    color: white;
+    margin-left: 200px;
+    margin-right: 70px;
+    border: 2px solid black;
+    border-radius: 15px;
+    list-style-type: none;
+    padding: 10px;
+    background-color: rgb(20, 20, 120)
 }
 
 h1,

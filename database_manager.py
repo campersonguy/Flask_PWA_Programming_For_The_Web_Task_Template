@@ -45,11 +45,12 @@ def sortPostData2():
     return view
 
 
-def insertContact(user, pw, email):
+def insertContact(user, pw, email, creationdate):
     con = sql.connect("database/data_source.db")
     cur = con.cursor()
     cur.execute(
-        "INSERT INTO userData (user,pw,email) VALUES (?,?,?)", (user, pw, email)
+        "INSERT INTO userData (user,pw,email,creationdate) VALUES (?,?,?,?)",
+        (user, pw, email, creationdate),
     )
     con.commit()
     con.close()
