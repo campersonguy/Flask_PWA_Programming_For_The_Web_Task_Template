@@ -57,7 +57,7 @@ button {
     font-family: 'Titillium Web';
     background-color: rgb(22, 22, 130);
     color: white;
-    margin-right: 300px;
+    margin-left: 140px;
 }
 
 .button {
@@ -151,7 +151,7 @@ input.sg {
     width: 200px;
     height: 25px;
     margin-bottom: 20px;
-    margin-right: 350px;
+    margin-right: 484px;
     font-size: 15px;
     display: inline-block;
     font-family: 'Titillium Web';
@@ -167,6 +167,10 @@ aside.sg {
     padding: 0px;
     padding-top: 20px;
     padding-bottom: 20px;
+}
+
+button.sg {
+    margin-right: 430px;
 }
 
 p.aside {

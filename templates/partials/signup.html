@@ -21,7 +21,7 @@
         <input id="cpassword" type="password" placeholder="Enter password..." class="sg">
         <p class="sg">Already have an account? <a href="login"><u>Log In</u></a></p>
         <p class="incorrect" id="inc"></p><br>
-        <button id="enter">Enter</button>
+        <button id="enter" class="sg">Enter</button>
     </form>
     <aside class="sg">
         <p id="check"><strong>
@@ -40,7 +40,7 @@
         const num = document.getElementById("num");
         const cap = document.getElementById("cap");
         const match = document.getElementById("match");
-        const myForm = document.getElementById('signup');
+        const signupForm = document.getElementById('signup');
         let numtest = /\d/;
         let captest = /[A-Z]/;
         let spatest = / /;
@@ -86,7 +86,7 @@
             }
         }
         function Enter() {
-            myForm.addEventListener('submit', function (event) {
+            signupForm.addEventListener('submit', function (event) {
                 if (username.value.length <= 16 && username.value.length >= 3 && atest.test(email.value) && !spatest.test(username.value) && password.value.length >= 8 && numtest.test(password.value) && captest.test(password.value) && password.value === cpassword.value && password.value !== "") {
                     window.location.href = "top_crimes";
                 } else {

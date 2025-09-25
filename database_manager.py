@@ -54,3 +54,13 @@ def insertContact(user, pw, email, creationdate):
     )
     con.commit()
     con.close()
+
+
+def insertPost(user, title, post):
+    with sql.connect("database/data_source.db") as con:
+        cur = con.cursor()
+        cur.execute(
+            "INSERT INTO postData (user, title, post) VALUES (?,?,?)",
+            (user, title, post),
+        )
+        con.commit()

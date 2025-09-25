@@ -55,12 +55,20 @@ def searchcrimes():
 
 
 @app.route("/submit_crimes")
+@app.route("/submit_crimes", methods=["POST", "GET"])
 def submitcrimes():
-    return render_template("partials/submit_crimes.html")
+    if request.method == "POST":
+        user = request.form["user"]
+        title = request.form["title"]
+        post = request.form["post"]
+        dbHandler.insertPost(user, title, post)
+        return redirect(url_for("topcrimes"))
+    else:
+        return render_template("partials/submit_crimes.html")
 
 
 @app.route("/leaderboard")
-def leaderboardp():
+def leaderboard():
     return render_template("partials/leaderboard.html")
 
 

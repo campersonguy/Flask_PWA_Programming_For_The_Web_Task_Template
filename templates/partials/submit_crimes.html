@@ -19,14 +19,24 @@
 <body>
     <h1 class="tc">Submit Crimes</h1>
     <h4 class="tc">Submit your own crimes! (We don't judge)</h4>
-    <label>
-        Your Story Here: <br>
-        <input size="60" style="height: 50px; margin-left: 140px; text-align: left;" placeholder="Write here...">
-    </label><br>
-    <label>
-        Your Title Here: <br>
-        <input size="60" style="height: 50px; margin-left: 140px; text-align: left;" placeholder="Write here...">
-    </label><br>
+    <form id="signup" action="/submit_crimes" method="POST">
+        <label>
+            Name: <br>
+            <input size="60" style="height: 50px; margin-left: 140px; text-align: left;"
+                placeholder="Name your crime..." name="user">
+        </label><br>
+        <label>
+            Title: <br>
+            <input size="60" style="height: 50px; margin-left: 140px; text-align: left;"
+                placeholder="Name your crime..." name="title">
+        </label><br>
+        <label>
+            Your Story Here: <br>
+            <input size="60" style="height: 50px; margin-left: 140px; text-align: left;" placeholder="Write here..."
+                name="post">
+        </label><br><br>
+        <button id="enter">Enter</button>
+    </form>
 </body>
 
 </html>
